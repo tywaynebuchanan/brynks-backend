@@ -32,13 +32,15 @@ DB.once("open", () => {
 })
 
 app.use(morgan("tiny"))
-app.use(
-  cors({
-    origin: "https://64a31e7ea3ef6d47ec7df1d9--quiet-mermaid-f1173b.netlify.app/",
-    // methods: ["GET", "POST"],
-    // credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://64a31e7ea3ef6d47ec7df1d9--quiet-mermaid-f1173b.netlify.app/",
+//     // methods: ["GET", "POST"],
+//     // credentials: true,
+//   })
+// );
+
+app.use(cors());
 
 app.use(cookieParser());
 
