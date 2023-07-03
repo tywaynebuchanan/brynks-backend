@@ -31,10 +31,10 @@ DB.once("open", () => {
 	console.log("DB connected success")
 })
 
-app.use(morgan("tiny"))
+// app.use(morgan("tiny"))
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["*"],
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -42,6 +42,10 @@ app.use(
 app.use(cookieParser());
 
 app.use(express.json());
+
+app.use("/",(res,req)=>{
+  res.send("API Working");
+})
 app.use("/api", authRoutes);
 app.use("/api/transactions", Transactions);
 app.use("/api/requests", Requests);
