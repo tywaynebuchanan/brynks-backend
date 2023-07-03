@@ -31,14 +31,15 @@ DB.once("open", () => {
 	console.log("DB connected success")
 })
 
-// app.use(morgan("tiny"))
+app.use(morgan("tiny"))
 app.use(
   cors({
-    origin: ["*"],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   })
 );
+
 app.use(cookieParser());
 
 app.use(express.json());
