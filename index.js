@@ -44,9 +44,9 @@ app.use(cookieParser());
 
 app.use(express.json());
 
-app.use("/",(res,req)=>{
-  res.send("API Working");
-})
+// app.use("/",(res,req)=>{
+//   res.send("API Working");
+// })
 app.use("/api", authRoutes);
 app.use("/api/transactions", Transactions);
 app.use("/api/requests", Requests);
